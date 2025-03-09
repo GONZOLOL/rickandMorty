@@ -47,6 +47,17 @@ npm install
   - `types/`: TypeScript type definitions.
   - `tests/`: Unit and integration tests.
 
+## State Management with Redux
+
+The application uses **Redux Toolkit** for state management. The state is divided into different slices located in the `features/` folder. Each slice manages a specific part of the application state, such as:
+
+- `charactersSlice.ts`: Handles the state of character data.
+- `episodesSlice.ts`: Manages episode-related data.
+- `locationsSlice.ts`: Stores location information.
+- `filtersSlice.ts`: Manages filtering options for the characters, episodes, and locations.
+
+Redux is configured in the `store.ts` file, where all slices are combined. The application uses the `useSelector` and `useDispatch` hooks from `react-redux` to interact with the store efficiently.
+
 ## Tests
 
 Tests have been implemented using Jest and React Testing Library. To run the tests, use the following command:
