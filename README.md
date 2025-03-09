@@ -12,6 +12,8 @@
 
 # Rick and Morty Code Test
 
+[Rick And Morty Deployed Page]([https://pages.github.com/](https://rickandmorty-bygbz8hyt-gonzalols-projects.vercel.app/))
+
 ## Project Description
 
 This project is a web application that uses React and Redux to display information about the characters, episodes, and locations from the Rick and Morty series. The application consumes data from the [Rick & Morty API](https://rickandmortyapi.com/documentation/#graphql) using the [urql](https://formidable.com/open-source/urql/) client.
