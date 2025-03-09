@@ -12,7 +12,7 @@
 
 # Rick and Morty Code Test
 
-[Rick And Morty Deployed Page]([https://pages.github.com/](https://rickandmorty-bygbz8hyt-gonzalols-projects.vercel.app/))
+[Rick And Morty Deployed Page](https://rickandmorty-bygbz8hyt-gonzalols-projects.vercel.app/)
 
 ## Project Description
 
