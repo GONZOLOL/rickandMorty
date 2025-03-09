@@ -1,10 +1,18 @@
 ![image](https://github.com/user-attachments/assets/a0316df2-8134-4f6d-ac6c-5e465cd47ebf)
 
+![image](https://github.com/user-attachments/assets/c4024680-2f00-4930-8dbd-647cefc32378)
+
 ![image](https://github.com/user-attachments/assets/78f69244-fd03-40c1-b318-f89161ef2ef3)
 
 ![image](https://github.com/user-attachments/assets/10a69776-b496-43c0-9dd2-c1cd518f3372)
 
 ![image](https://github.com/user-attachments/assets/f4c3ed10-80ff-4b41-a041-e40829a639b6)
+
+![image](https://github.com/user-attachments/assets/f3fc08f2-2d6d-412a-82c7-48be6d3fcf5f)
+
+![image](https://github.com/user-attachments/assets/84369fbc-1d84-48d3-8201-baa712925b5b)
+
+![image](https://github.com/user-attachments/assets/2e45b03a-2075-457c-9e55-b751e180d73c)
 
 
 # Rick and Morty Code Test
