@@ -1,0 +1,23 @@
+.base-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  .base-logo {
+    margin: 20px 0px 0px 0px;
+    width: 400px;
+  }
+
+  & :hover {
+    transform: scale(1.05);
+  }
+}
+
+.not-found {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  font-size: 2rem;
+  color: #ff9900;
+}

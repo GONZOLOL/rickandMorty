@@ -1,0 +1,114 @@
+.homePage-topNavigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #272b33;
+  color: white;
+  margin-inline: 100px;
+
+  .homePage-topNavigationButtons {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    gap: 10px;
+
+    button {
+      padding: 10px 20px;
+      background-color: #ff9800;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      color: #272b33;
+      transition: background-color 0.2s;
+
+      &:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+      }
+
+      &:hover:not(:disabled) {
+        background-color: rgba(255, 153, 0, 0.512);
+      }
+    }
+
+    .homePage-pageInfo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.2rem;
+      color: #ff9900;
+      margin-left: 20px;
+    }
+  }
+
+  .homePage-filters {
+    display: flex;
+    align-items: center;
+
+    input,
+    select {
+      margin: 0 5px;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .resetButton {
+      margin-left: 10px;
+      padding: 10px 15px;
+      background-color: #ff9800;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+      color: #272b33;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: rgba(255, 153, 0, 0.512);
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  select,
+  button {
+    width: 300px;
+    padding: 10px !important;
+    margin: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  input {
+    width: 280px;
+    margin: 0 !important;
+  }
+
+  .homePage-topNavigation {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    margin-inline: 0;
+    gap: 20px;
+    text-align: center;
+
+    .homePage-topNavigationButtons {
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 10px;
+
+      .homePage-pageInfo {
+        margin-left: 0;
+      }
+    }
+
+    .homePage-filters {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+}

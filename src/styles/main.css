@@ -1,0 +1,521 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
+.base-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.base-title .base-logo {
+  margin: 20px 0px 0px 0px;
+  width: 400px;
+}
+.base-title :hover {
+  transform: scale(1.05);
+}
+
+.not-found {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  font-size: 2rem;
+  color: #ff9900;
+}
+
+.home-page {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  height: 100vh;
+}
+.home-page .home-page-button {
+  position: relative;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.5s, filter 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  font-size: 3rem;
+  font-weight: bold;
+  overflow: hidden;
+}
+.home-page .home-page-button .linkStyle {
+  text-decoration: none;
+  color: rgb(255, 153, 0);
+  position: relative;
+  z-index: 1;
+  text-shadow: 1px 1px 1px black, 0 0 1em black, 0 0 0.2em black;
+}
+.home-page .home-page-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%);
+  transition: filter 0.5s, background-size 0.5s;
+  z-index: 0;
+}
+.home-page .home-page-button:hover::before {
+  filter: grayscale(0%);
+  scale: 1.2;
+}
+.home-page .characters::before {
+  background-image: url("/public/assets/characters.jpg");
+}
+.home-page .episodes::before {
+  background-image: url("/public/assets/episodes.jpg");
+}
+.home-page .locations::before {
+  background-image: url("/public/assets/locations.jpg");
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #272b33;
+  color: white;
+  font-family: "Roboto", sans-serif;
+}
+
+.homePage-characterList {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  justify-content: center;
+  padding: 40px 100px;
+  background-color: #272b33;
+}
+
+.homePage-characterCard {
+  background-color: #3c3e44;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+  text-decoration: none;
+  color: white;
+}
+.homePage-characterCard:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: rgb(255, 152, 0);
+}
+.homePage-characterCard div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.homePage-characterCard .homePage-characterImage {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 10px;
+}
+.homePage-characterCard p {
+  font-weight: bold;
+  color: white;
+}
+
+.homePage-navigationButtons {
+  display: flex;
+  justify-content: center;
+  background-color: #272b33;
+  padding: 20px 20px 100px 20px;
+}
+.homePage-navigationButtons button {
+  background-color: rgb(255, 152, 0);
+  border: none;
+  border-radius: 4px;
+  color: #272b33;
+  cursor: pointer;
+  margin: 0 10px;
+  padding: 10px 20px;
+  transition: background-color 0.2s;
+}
+.homePage-navigationButtons button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+.homePage-navigationButtons button:hover:not(:disabled) {
+  background-color: rgba(255, 153, 0, 0.512);
+}
+
+.homePage-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+}
+.homePage-loading img {
+  width: 200px;
+}
+.homePage-loading .spinner {
+  font-size: 48px;
+  margin-bottom: 20px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.charactersPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.charactersPage__goBackButtonContainer {
+  align-self: flex-start;
+  margin: 20px 20px;
+  z-index: 0;
+}
+.charactersPage__goBackButton {
+  background-color: rgb(255, 152, 0);
+  border: none;
+  border-radius: 4px;
+  color: #272b33;
+  cursor: pointer;
+  padding: 10px 20px;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+.charactersPage__goBackButton:hover {
+  background-color: rgb(100, 60, 0);
+}
+.charactersPage__characterCard {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  overflow: hidden;
+  width: 80%;
+  max-width: 1200px;
+  position: relative;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  gap: 40px;
+}
+.charactersPage__characterCard::before {
+  content: attr(data-name);
+  text-transform: uppercase;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40rem;
+  color: #272b33;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 0;
+}
+.charactersPage__characterContainer {
+  display: flex;
+  gap: 20px;
+  z-index: 1;
+}
+.charactersPage__characterImage {
+  z-index: 1;
+  flex: 1;
+  padding: 40px;
+}
+.charactersPage__characterImage img {
+  width: 300px;
+  border-radius: 50%;
+  border: 5px solid rgb(255, 152, 0);
+}
+.charactersPage__characterInfo {
+  flex: 2;
+  padding: 20px;
+  position: relative;
+}
+.charactersPage__characterInfo h2 {
+  color: rgb(255, 152, 0);
+}
+.charactersPage__characterName {
+  font-size: 48px;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+  color: rgb(255, 152, 0);
+}
+.charactersPage__characterDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.charactersPage__characterDetail {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: rgba(255, 255, 255, 0.248);
+  border-radius: 4px;
+  padding-inline: 20px;
+  border: solid 2px rgba(255, 152, 0, 0.5);
+}
+.charactersPage__detailTitle {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: rgb(255, 152, 0);
+}
+.charactersPage__detailValue {
+  font-size: 18px;
+  font-weight: bold;
+}
+.charactersPage__characterInfo::before {
+  content: attr(data-name);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 100px;
+  color: rgba(255, 255, 255, 0.1);
+  white-space: nowrap;
+  z-index: 0;
+}
+.charactersPage__episodeNavigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.charactersPage__episode {
+  flex: 1;
+  text-align: center;
+}
+.charactersPage__episode .charactersPage__episodeName {
+  font-size: 1.2em;
+  color: #333;
+}
+.charactersPage__episode .charactersPage__episodeAirDate {
+  font-size: 0.9em;
+  color: #666;
+}
+.charactersPage__navigationButton {
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 24px;
+  padding: 10px;
+  transition: color 0.2s;
+}
+.charactersPage__navigationButton:disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+.charactersPage__navigationButton:hover:not(:disabled) {
+  color: rgb(255, 152, 0);
+}
+.charactersPage__loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+}
+.charactersPage__loading .spinner {
+  font-size: 48px;
+  margin-bottom: 20px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.notFoundPage {
+  text-align: center;
+  color: #333;
+  background-image: url("/assets/404.png");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.notFoundPage p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-top: 22rem;
+}
+.notFoundPage .goBackButton {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+.notFoundPage .goBackButton:hover {
+  background-color: #0056b3;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background-color: #272b33;
+  z-index: 1000;
+}
+.navbar .navbar-button {
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  transition: background-color 0.2s, transform 0.2s, filter 0.2s;
+  display: flex;
+  width: 100%;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  position: relative;
+  text-decoration: none;
+}
+.navbar .navbar-button .linkStyle {
+  text-decoration: none;
+  color: rgb(255, 153, 0);
+  position: relative;
+  z-index: 1;
+  text-shadow: 1px 1px 1px black, 0 0 1em black, 0 0 0.2em black;
+}
+.navbar .navbar-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%) brightness(0.5);
+  transition: filter 0.2s, background-size 0.2s;
+  z-index: 0;
+}
+.navbar .navbar-button:hover::before {
+  filter: grayscale(0%);
+  background-size: 120%;
+}
+.navbar .navbar-button.active::before {
+  filter: grayscale(0%);
+  box-shadow: 1px 1px 1px white, 0 0 0 white, 0 0 0.4em white;
+}
+.navbar .characters::before {
+  background-image: url("/public/assets/characters.jpg");
+}
+.navbar .episodes::before {
+  background-image: url("/public/assets/episodes.jpg");
+}
+.navbar .locations::before {
+  background-image: url("/public/assets/locations.jpg");
+}
+
+.homePage-topNavigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #272b33;
+  color: white;
+  margin-inline: 100px;
+}
+.homePage-topNavigation .homePage-topNavigationButtons {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  gap: 10px;
+}
+.homePage-topNavigation .homePage-topNavigationButtons button {
+  padding: 10px 20px;
+  background-color: #ff9800;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #272b33;
+  transition: background-color 0.2s;
+}
+.homePage-topNavigation .homePage-topNavigationButtons button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+.homePage-topNavigation .homePage-topNavigationButtons button:hover:not(:disabled) {
+  background-color: rgba(255, 153, 0, 0.512);
+}
+.homePage-topNavigation .homePage-topNavigationButtons .homePage-pageInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  color: #ff9900;
+  margin-left: 20px;
+}
+.homePage-topNavigation .homePage-filters {
+  display: flex;
+  align-items: center;
+}
+.homePage-topNavigation .homePage-filters input,
+.homePage-topNavigation .homePage-filters select {
+  margin: 0 5px;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.homePage-topNavigation .homePage-filters .resetButton {
+  margin-left: 10px;
+  padding: 10px 15px;
+  background-color: #ff9800;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  color: #272b33;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+.homePage-topNavigation .homePage-filters .resetButton:hover {
+  background-color: rgba(255, 153, 0, 0.512);
+}/*# sourceMappingURL=main.css.map */

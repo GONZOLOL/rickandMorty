@@ -1,0 +1,11 @@
+@use "./base/base";
+@use "./pages/homePage";
+@use "./pages/charactersPage";
+@use "./pages/characterDetailPage";
+@use "./base/notFoundPage";
+@use "./base/navBar";
+@use "./components/filter";
+@use "./pages/episodesPage";
+@use "./pages/locationsPage";
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");

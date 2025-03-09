@@ -1,0 +1,72 @@
+.home-page {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  height: 100vh;
+
+  .home-page-button {
+    position: relative;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.5s, filter 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    font-size: 3rem;
+    font-weight: bold;
+    overflow: hidden;
+
+    .linkStyle {
+      text-decoration: none;
+      color: rgb(255, 153, 0);
+      position: relative;
+      z-index: 1;
+      text-shadow: 1px 1px 1px black, 0 0 1em black, 0 0 0.2em black;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      filter: grayscale(100%);
+      transition: filter 0.5s, background-size 0.5s;
+      z-index: 0;
+    }
+
+    &:hover::before {
+      filter: grayscale(0%);
+      scale: 1.2;
+    }
+  }
+
+  .characters::before {
+    background-image: url("/public/assets/characters.jpg");
+  }
+
+  .episodes::before {
+    background-image: url("/public/assets/episodes.jpg");
+  }
+
+  .locations::before {
+    background-image: url("/public/assets/locations.jpg");
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+
+    .home-page-button::before {
+      filter: none; // Deshabilitar el filtro de escala de grises en pantallas pequeñas
+    }
+  }
+}

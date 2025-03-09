@@ -1,0 +1,169 @@
+.locationsPage {
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .currentLocation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0px;
+    margin-inline: 100px;
+    background-color: #272b33;
+
+    .locationPage-navigation {
+      display: flex;
+      gap: 20px;
+    }
+
+    button {
+      background-color: rgb(255, 152, 0);
+      color: black;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+      }
+
+      &:hover:not(:disabled) {
+        background-color: rgb(255, 152, 0);
+      }
+    }
+
+    .locationDetails {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      text-align: center;
+      margin-left: auto;
+
+      h2 {
+        font-size: 24px;
+      }
+
+      p {
+        font-size: 18px;
+        color: #666;
+      }
+    }
+  }
+
+  .locationPage-characterList {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    justify-content: center;
+    padding: 40px 100px;
+    background-color: #272b33;
+
+    .locationPage-characterCard {
+      background-color: #3c3e44;
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+      text-decoration: none;
+      color: white;
+
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: rgb(255, 152, 0);
+      }
+
+      div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .locationPage-characterImage {
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-weight: bold;
+        color: white;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .base-logo {
+    width: 300px !important;
+  }
+
+  .navbar .navbar-button {
+    font-size: 20px !important;
+  }
+
+  .not-found {
+    height: auto;
+  }
+
+  .currentLocation {
+    flex-direction: column;
+    gap: 10px !important;
+
+    .locationPage-navigation {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .locationDetails {
+      width: 90%;
+      flex-direction: column;
+      gap: 0px !important;
+      margin-left: 0 !important;
+    }
+  }
+
+  .locationPage-characterList {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px;
+    padding: 20px;
+    justify-content: center;
+  }
+
+  .locationPage-characterCard {
+    padding: 10px;
+  }
+
+  .locationPage-characterImage {
+    width: 100px;
+    height: 100px;
+  }
+
+  .homePage-navigationButtons {
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+  }
+
+  .homePage-navigationButtons button {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .homePage-topNavigation {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    font-size: 16px;
+    margin-inline: 0 !important;
+  }
+}

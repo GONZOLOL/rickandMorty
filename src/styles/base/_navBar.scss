@@ -1,0 +1,71 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background-color: #272b33;
+  z-index: 1000;
+
+  .navbar-button {
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: background-color 0.2s, transform 0.2s, filter 0.2s;
+    display: flex;
+    width: 100%;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    position: relative;
+    text-decoration: none;
+
+    .linkStyle {
+      text-decoration: none;
+      color: rgb(255, 153, 0);
+      position: relative;
+      z-index: 1;
+      text-shadow: 1px 1px 1px black, 0 0 1em black, 0 0 0.2em black;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      filter: grayscale(100%) brightness(0.5);
+      transition: filter 0.2s, background-size 0.2s;
+      z-index: 0;
+    }
+
+    &:hover::before {
+      filter: grayscale(0%);
+      background-size: 120%;
+    }
+
+    &.active::before {
+      filter: grayscale(0%);
+      box-shadow: 1px 1px 1px white, 0 0 0 white, 0 0 0.4em white;
+    }
+  }
+
+  .characters::before {
+    background-image: url("/public/assets/characters.jpg");
+  }
+
+  .episodes::before {
+    background-image: url("/public/assets/episodes.jpg");
+  }
+
+  .locations::before {
+    background-image: url("/public/assets/locations.jpg");
+  }
+}
